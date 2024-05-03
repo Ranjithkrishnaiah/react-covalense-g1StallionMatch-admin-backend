@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stallion Match Broodmare Affinity</title>
+    <link rel="stylesheet" href="https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/css/reports.css">
+    <link rel="stylesheet" href="https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/css/pedegree.css">
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <style>
+        @media print {
+            @page {
+                size: A5 portrait;s
+            }
+            .reports-wrapper {
+                break-inside: avoid;
+            }
+        }
+    </style>
+    <style>
+        .radar-chart .area {
+          fill-opacity: 0.7;
+        }
+        .radar-chart.focus .area {
+          fill-opacity: 0.3;
+        }
+        .radar-chart.focus .area.focused {
+          fill-opacity: 0.9;
+        }
+        .area.germany, .germany .circle {
+          fill: #FFD700;
+          stroke: none;
+        }
+        .area.argentina, .argentina .circle {
+          fill: #ADD8E6;
+          stroke: none;
+        }
+        </style>
+</head>
+<body>
+ <div class="reports-wrapper home-wrapper" style="background: #1d472e;">
+    <div class="content-wrapper">
+        <div class="damsire-banner" style="background:url(https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/images/damsire-banner.jpg) no-repeat center">
+            <div class="green-tiles"><img src="https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/images/green-tiles.png" alt="SMP"/></div>
+            <div class="home-logo">
+                <img src="https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/images/stallion-main-logo.png" alt="Stallion Match"/>
+            </div>
+        </div>
+        <div class="home-content damsire-content">
+            <h1>Powering<br/>Tomorrow’s Winners</h1>
+            <h5> Stallion Match <strong>Broodmare Sire</strong> Report</h5>
+            
+        </div>
+    </div>
+    <!-- <div class="footer-wrapper"></div> -->
+ </div>
+
+ <div class="reports-wrapper inner-wrapper" style="margin-top: 16px; background: #ffffff;">
+ <div class="content-wrapper">
+    <h1>La Lova<br/><span>(AUS, 2012, Street Boss X Volkaspray)</span></h1>
+    <div class="affinity-internal">
+       <div>
+         <h6>Date:</h6>
+         <h5>
+             22/03/22
+         </h5>
+        </div>
+       <div>
+         <h6>Prepared for:</h6>
+         <h5>
+           Matthew Ennis
+         </h5>
+       </div>
+    </div>
+    <div class="affinity-internal">
+     <div>
+       <h6>Locations:</h6>
+       <h5>
+         Kentucky, New York, Pennsylvania, New Jersey,<br/> Maryland, USA
+       </h5>
+      </div>
+  </div>
+  <div class="affinity-internal">
+  <div>
+   <h6>Farms Included:</h6>
+   <h5>
+     Coolmore, Lane’s End, WinStar, Three Bridges
+   </h5>
+  </div>
+  </div>
+ </div>
+ <div class="footer-wrapper">
+     <img src="https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/images/stallion-logo.png" alt="stallion match"/>
+ </div>  
+</div>
+
+<div class="reports-wrapper inner-wrapper" style="margin-top: 16px; background: #ffffff;">
+    <div class="content-wrapper">
+       <h1>Stallion Match Broomdare Sire<br/> Report Explained</h1>
+       <div class="affinity-analysis-internal">
+          <div>
+                <p>The Stallion Match Broomdare Sire Report analyses a selection of stallions against your mare derived from your selected location and/or farms. Stallion Match leverages its immense global database to identify success through the stallion population to produce the following indicators:</p>
+                <p><span>                  
+                    - # G1 winners<br/>
+                    - # Stakes winners<br/>
+                    - # Runners<br/>
+                    - G1/Runners %<br/>
+                    - SW/Runners %
+                </span>
+                </p> 
+                <p>The final result is a simple report identifying the most suitable sirelines for your mare and her sire (broodmare sire).</p>
+           </div>
+          <div>
+                <p class="success">
+                <span>Age Profile</span><br/>
+                All stakes winners with a similar pedigree to the proposed hypothetical mating are plotted on a radar chart by sex, showing the stakes-winning success by age and sex.<br/>
+                The resulting spread is then analysed, and an Age Profile is determined.
+                </p>
+                <p class="success">
+                 <span>Distance Profile</span><br/>
+                 All stakes winners with a similar pedigree to the proposed hypothetical mating are plotted on a radar chart by sex, showing the stakes-winning success by distance and sex.<br/>
+                 The resulting spread is then analysed, and a Distance Profile is determined - Sprinter, Middle-Distance, Stayer.
+                </p>
+                <p class="success">
+                    <span>Top Performing Sire lines</span><br/>
+                    The system decontructs your broodmare and more specifically uses her sire (broodmare sire) to identify the most successful sire line. Results include:
+                   </p>
+                <p class="success" style="padding-bottom:0px;">
+                    - Sire / Grandsire Name<br/>
+                    - G1 winners (total #)<br/>
+                    - Stakes winners (total #)<br/>
+                    - Runners (total #)<br/>
+                    - G1 Winners / Runners %<br/>
+                    - Stakes Winners / Runners %<br/>
+                    - Success banding:
+                </p>
+                <p class="success damsire-success">
+                    <span style="color:#BD9A68;">- Gold:</span> an elite strike rate in the top 10% of the population.
+                </p>
+                <p class="success damsire-success">
+                        <span style="color:#007142;">- Green:</span> an above-average strike rate within the top 30% of the population.
+                </p>
+                <p class="success damsire-success">
+                    <span style="color:#C75227;"> - Burnt Orange:</span> a below-average strike rate that is in the bottom 30% of the population.
+            </p>
+            </h4>
+          </div>
+       </div>
+    </div>
+    <div class="footer-wrapper">
+        <img src="https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/images/stallion-logo.png" alt="stallion match"/>
+    </div>
+ </div> 
+
+ <div class="reports-wrapper inner-wrapper" style="margin-top: 16px; background: #ffffff;">
+    <div class="content-wrapper">
+       <h3>La Lova Pedigree</h3>
+       <h6>(AUS, 2012, Street Boss X Volkaspray)</h6>
+       <!-- pedegree-started -->
+       <div class="pedegree-box">
+         <div class="tree__line" data-num="1"></div>
+         <div class="tree__line" data-num="2"></div>
+         <div class="tree__line" data-num="3"></div>
+         <div class="tree__line" data-num="4"></div>
+         <div class="tree__line" data-num="5"></div>
+         <div class="tree__line" data-num="6"></div>
+         <div class="tree__line" data-num="7"></div>
+         <div class="tree__col" data-col="0">
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <div class="tree_cell_box_left">
+                       <div class="avatar_box">
+                         <img src="https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/images/horse-image.png" alt="">
+                       </div>
+                    </div>
+                    <div class="tree_cell_box_right">
+                        <h6>La lova</h6>
+                        <p>G1 Pro</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+<!-- one-generation -->
+         <div class="tree__col" data-col="1">
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Galileo</h6>
+                    <p>G1 Pro</p>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Affianced</h6>
+                    <p>G1 Pro</p>
+                </div>
+            </div>
+         </div>
+
+    <!-- two-generation -->
+         <div class="tree__col" data-col="2">
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Sadler’s Wells</h6>
+                    <p>G1 Pro</p>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Urban Sea</h6>
+                    <p>G1 Pro</p>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Erins Isle</h6>
+                    <p>G1 Pro</p>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>La Meilleure</h6>
+                    <p>G1 Pro</p>
+                </div>
+            </div>
+         </div>
+
+        <!-- three-generation -->
+         <div class="tree__col" data-col="3">
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Northern Dancer</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Fairy Bridge</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Miswaki</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Allegretta</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box lightblue">
+                    <h6>Busted</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Chemise</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Lord Gayle</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Gradille</h6>
+                </div>
+            </div>
+         </div>
+
+        <!-- four-generation -->
+         <div class="tree__col" data-col="4">
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Nearctic</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Natalma</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Bold Reason</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Special</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box lightpink">
+                    <h6>Mr. Prospector</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Hopespringeternal</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Lombard</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Anatevka</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Crepello</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Sans Le Sou</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Shantung</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Selina</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Sir Gaylord</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Sticky Case</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Home Guard</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Gradiva</h6>
+                </div>
+            </div>
+         </div>
+
+
+         <!-- five-generation -->
+         <div class="tree__col" data-col="5">
+            <!-- one -->
+            <div class="tree__cellgroup">
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Pas De Nom</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Sir Ivor</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Courtly Dee</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Admiral’s Voyage</h6>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- two -->
+            <div class="tree__cellgroup">
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Petitioner</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Sir Gaylord</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Attica</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Never Bend</h6>
+                    </div>
+                </div>
+           </div>
+           <!-- three -->
+           <div class="tree__cellgroup">
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Tulle</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Northern Dancer</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Goofed</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Drone</h6>
+                </div>
+            </div>
+           </div>
+
+           <!-- four -->
+           <div class="tree__cellgroup">
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Olmec</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Tullyer</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Milan Mill</h6>
+                </div>
+            </div>
+            <div class="tree__cell">
+                <div class="tree_cell_box">
+                    <h6>Busted</h6>
+                </div>
+            </div>
+            </div>
+            
+            <!-- five -->
+            <div class="tree__cellgroup">
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Censorship</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Native Dancer</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Special</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Prove Out</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- six -->
+            <div class="tree__cellgroup">
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Santa Quilla</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Turn-To</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Northdice</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Nashua</h6>
+                    </div>
+                </div>
+           </div>
+
+           <!-- seven -->
+           <div class="tree__cellgroup">
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Rarelea</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Hard Tack</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Polly Macaw</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Vilmorin</h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- eight -->
+            <div class="tree__cellgroup">
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Cheb</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Chicoroy</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>Gold Digger</h6>
+                    </div>
+                </div>
+                <div class="tree__cell">
+                    <div class="tree_cell_box">
+                        <h6>World Lass</h6>
+                    </div>
+                </div>
+            </div>
+
+         </div>
+
+       </div>
+<!-- pedegree-End -->
+ <div class="common-datatable stallion-ancestors-table">
+        <h3>La Lova’s Pedigree Stakes Profile</h3>
+         <div class="pedigree-graph">
+            <div>
+                <div style="height:280px;"><svg id="myPlot" viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet"></svg></div>
+            </div>
+            <div>
+                <div style="height:280px;"><div id="apexChart"></div></div>
+            </div>
+
+         </div>
+       </div>
+    </div>
+    <div class="footer-wrapper">
+        <img src="https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/images/stallion-logo.png" alt="stallion match"/>
+    </div>
+ </div> 
+
+ {{#each topperformingsirelines}}
+ <div class="reports-wrapper inner-wrapper" style="margin-top: 16px; background: #ffffff;">
+    <div class="content-wrapper">
+       <h1>Top Performing Sire lines</h1>
+       <div class="stake-winners">
+        <h3>Matched With Your Broodmare’s Sire</h3>
+        <div class="common-datatable stakes-comparison">
+            <div class="datatable">
+               <table>
+                   <thead>
+                       <tr>
+                           <th style="width:120px;">Horse</th>
+                           <th class="equal-width">G1 Winners</th>
+                           <th class="equal-width">Stakes Winners</th>
+                           <th class="equal-width">Runners</th>
+                           <th class="equal-width">G1/Rnrs %</th>
+                           <th class="equal-width">SWs/Rnrs %</th>
+                           <th style="width:50px;">&nbsp;</th>
+                         </tr>
+                   </thead>
+                   <tbody>
+                    {{#each this}}
+                       <tr>
+                           <td>{{this.horseName}}</td>
+                           <td>0</td>
+                           <td>2</td>
+                           <td>0</td>
+                           <td>22</td>
+                          <td>15</td>
+                          <td class={{this.colour}}>&nbsp;</td>
+                         </tr>
+                    {{/each}}
+                         <!--<tr>
+                            <td>Rawaaq</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>22</td>
+                           <td>15</td>
+                           <td class="green">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>Rawaaq</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>22</td>
+                           <td>15</td>
+                           <td class="brick">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>Rawaaq</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>22</td>
+                           <td>15</td>
+                           <td class="orange">&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td>Rawaaq</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>22</td>
+                           <td>15</td>
+                           <td class="grey">&nbsp;</td>
+                          </tr>
+                          <tr>
+                             <td>Rawaaq</td>
+                             <td>0</td>
+                             <td>2</td>
+                             <td>0</td>
+                             <td>22</td>
+                            <td>15</td>
+                            <td class="green">&nbsp;</td>
+                           </tr>
+                           <tr>
+                             <td>Rawaaq</td>
+                             <td>0</td>
+                             <td>2</td>
+                             <td>0</td>
+                             <td>22</td>
+                            <td>15</td>
+                            <td class="brick">&nbsp;</td>
+                           </tr>
+                           <tr>
+                             <td>Rawaaq</td>
+                             <td>0</td>
+                             <td>2</td>
+                             <td>0</td>
+                             <td>22</td>
+                            <td>15</td>
+                            <td class="orange">&nbsp;</td>
+                           </tr>
+                           <tr>
+                            <td>Rawaaq</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>0</td>
+                            <td>22</td>
+                           <td>15</td>
+                           <td class="grey">&nbsp;</td>
+                          </tr>
+                          <tr>
+                             <td>Rawaaq</td>
+                             <td>0</td>
+                             <td>2</td>
+                             <td>0</td>
+                             <td>22</td>
+                            <td>15</td>
+                            <td class="green">&nbsp;</td>
+                           </tr>
+                           <tr>
+                             <td>Rawaaq</td>
+                             <td>0</td>
+                             <td>2</td>
+                             <td>0</td>
+                             <td>22</td>
+                            <td>15</td>
+                            <td class="brick">&nbsp;</td>
+                           </tr>
+                           <tr>
+                             <td>Rawaaq</td>
+                             <td>0</td>
+                             <td>2</td>
+                             <td>0</td>
+                             <td>22</td>
+                            <td>15</td>
+                            <td class="orange">&nbsp;</td>
+                           </tr>
+                           <tr>
+                             <td>Rawaaq</td>
+                             <td>0</td>
+                             <td>2</td>
+                             <td>0</td>
+                             <td>22</td>
+                            <td>15</td>
+                            <td class="grey">&nbsp;</td>
+                           </tr>
+                           <tr>
+                              <td>Rawaaq</td>
+                              <td>0</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>22</td>
+                             <td>15</td>
+                             <td class="green">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Rawaaq</td>
+                              <td>0</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>22</td>
+                             <td>15</td>
+                             <td class="brick">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Rawaaq</td>
+                              <td>0</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>22</td>
+                             <td>15</td>
+                             <td class="orange">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Rawaaq</td>
+                              <td>0</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>22</td>
+                             <td>15</td>
+                             <td class="brick">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Rawaaq</td>
+                              <td>0</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>22</td>
+                             <td>15</td>
+                             <td class="orange">&nbsp;</td>
+                            </tr>
+                            <tr>
+                             <td>Rawaaq</td>
+                             <td>0</td>
+                             <td>2</td>
+                             <td>0</td>
+                             <td>22</td>
+                            <td>15</td>
+                            <td class="grey">&nbsp;</td>
+                           </tr>
+                           <tr>
+                              <td>Rawaaq</td>
+                              <td>0</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>22</td>
+                             <td>15</td>
+                             <td class="green">&nbsp;</td>
+                            </tr>
+                            <tr>
+                              <td>Rawaaq</td>
+                              <td>0</td>
+                              <td>2</td>
+                              <td>0</td>
+                              <td>22</td>
+                             <td>15</td>
+                             <td class="brick">&nbsp;</td>
+                            </tr> -->
+                   </tbody>
+                 </table>
+            </div>
+          </div>
+       </div>
+ </div>
+    <div class="footer-wrapper">
+        <img src="https://dev-smp-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/admin/images/stallion-logo.png" alt="stallion match"/>
+    </div>
+ </div>
+ {{/each}}
+ <script>
+RadarChart.defaultConfig.color = function() {};
+RadarChart.defaultConfig.radius = 3;
+RadarChart.defaultConfig.w = 400;
+RadarChart.defaultConfig.h = 400;
+</script>
+<script>
+    var data = [
+      {
+        className: 'germany', // optional can be used for styling
+        axes: [
+          {axis: "strength", value: 13}, 
+          {axis: "intelligence", value: 6}, 
+          {axis: "charisma", value: 5},  
+          {axis: "dexterity", value: 9},  
+          {axis: "luck", value: 2}
+        ]
+      },
+      {
+        className: 'argentina',
+        axes: [
+          {axis: "strength", value: 6}, 
+          {axis: "intelligence", value: 7}, 
+          {axis: "charisma", value: 10},  
+          {axis: "dexterity", value: 13},  
+          {axis: "luck", value: 9}
+        ]
+      }
+    ];
+    function randomDataset() {
+      return data.map(function(d) {
+        return {
+          className: d.className,
+          axes: d.axes.map(function(axis) {
+            return {axis: axis.axis, value: Math.ceil(Math.random() * 10)};
+          })
+        };
+      });
+    }
+    </script>
+    
+    <script>
+    var chart = RadarChart.chart();
+    var cfg = chart.config(); // retrieve default config
+    var svg = d3.select('#myPlot').append('svg')
+    svg.append('g').classed('single', 1).datum(randomDataset()).call(chart);
+    
+    // many radars
+    chart.config({w: cfg.w / 4, h: cfg.h / 4, axisText: false, levels: 0, circles: false});
+    cfg = chart.config();
+    function render() {
+      var game = svg.selectAll('g.game').data(
+        [
+          randomDataset(),
+          randomDataset(),
+          randomDataset(),
+          randomDataset()
+        ]
+      );
+      game.enter().append('g').classed('game', 1);
+      game
+        .attr('transform', function(d, i) { return 'translate('+((cfg.w * 4) + 50 + (i * cfg.w))+','+ (cfg.h * 1.3) +')'; })
+        .call(chart);
+    
+      //setTimeout(render, 1000);
+    }
+    //render();
+    </script>
+    <script>
+         var options = {
+          title: {
+           text: 'Distance',
+           align: 'center',
+           position: 'bottom'
+          },
+          series: [{
+          name: 'Dam Side',
+          data: [
+          7,
+          6,
+          19,
+          44,
+          7,
+          0
+        ],
+        color: '#ffb6c1',
+        }, {
+          name: 'Sire Side',
+          data: [
+          12,
+          0,
+          16,
+          41,
+          5,
+          1
+        ],
+        color: '#ADD8E6'
+        }],
+          chart: {
+          height: 280,
+          type: 'radar',
+          dropShadow: {
+            enabled: false,
+            blur: 1,
+            left: 1,
+            top: 1
+          },
+          toolbar: {
+            show: true,
+            tools: {
+            download: false
+            }
+        }
+        },
+        stroke: {
+          width: 2
+        },
+        fill: {
+          opacity: 0.1
+        },
+        markers: {
+          size: 8,
+          shape: "square",
+        },
+        xaxis: {
+          categories: [
+      "1000m (5f)",
+      "1050m (5.25f)",
+      "1100m (5.5f)",
+      "1200m (6f)",
+      "1300m (6.5f)",
+      "1340m (6.7f)"
+    ]
+        }
+        };
+        var chart = new ApexCharts(document.querySelector("#apexChart"), options);
+        chart.render();
+    </script>
+</body>
+</html>

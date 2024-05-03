@@ -1,0 +1,10 @@
+bookNumber,dayNumber,lotCode,lotNumber,lotType,horseName,horseGender,horseYoB,horseFoaledDate,horseCoB,horseColour,sireName,sireYoB,sireCoB,sireColour,damName,damYoB,damCoB,damColour,sireSireName,sireSireYoB,sireSireCoB,sireSireColour,damSireName,damSireYoB,damSireCoB,damSireColour,venderName,buyerName,buyerLocation,coveringStallionName,price,priceCurrency,isWithdrawn
+,1,1,1,1,,Filly,2021,,USA,Grey Roan,Macho Uno,,,,Oasis At Midnight,,,,,,,,Midnight Lute,,,,"Beth Bayer, Agent IX",,,,,,0
+,1,2,2,1,,Colt,2021,,USA,Dark Bay Brown,Klimt,,,,Onebadkitty,,,,,,,,Street Cry ,,IRE,,"Beth Bayer, Agent XVIII",,,,,,0
+,1,3,3,1,,Filly,2021,,USA,Grey Roan,Outwork,,,,Paradise Bound,,,,,,,,Pulpit,,,,"Beth Bayer, Agent XVI",,,,,,0
+,1,4,4,1,,Colt,2021,,USA,Dark Bay Brown,Sharp Azteca,,,,Peppermint Fire,,,,,,,,Sidney's Candy,,,,Sweet River Thoroughbreds,,,,,,0
+,1,5,5,1,,Colt,2021,,USA,Chestnut,Accelerate,,,,Perique,,,,,,,,Tapit,,,,"Beth Bayer, Agent XVIII",,,,,,0
+,1,6,6,1,,Colt,2021,,USA,Bay,Blame,,,,Petunia Face,,,,,,,,Congrats,,,,"Kim Harrison (Top Speed Farm), Agent III",,,,,,0
+,1,7,7,1,,Filly,2021,,USA,Bay,Maximus Mischief,,,,Port of Indy,,,,,,,,Congrats,,,,"Beth Bayer, Agent XVIII",,,,,,0
+,1,8,8,1,Prize Worthy,Colt,2021,,USA,Grey Roan,Khozan,,,,Prize Informant,,,,,,,,Marciano,,,,"Kaizen Sales (Richard Kent), Agent VII",,,,,,0
+,1,9,9,1,,Colt,2021,,USA,Dark Bay Brown,Coal Front,,,,Pure Ride,,,,,,,,Simon Pure,,,,"Moreau Bloodstock Int'l, Inc., Agent",,,,,,0

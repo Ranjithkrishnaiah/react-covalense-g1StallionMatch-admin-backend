@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stallion Report</title>
+    <link
+      rel="stylesheet"
+      href="{{this.pathPortalReportTemplateStyles}}/css/main.css"
+    />
+    <script src="{{this.pathReportTemplateStyles}}/js/chart.js"></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="container stallion-report-page">
+        <!-- header -->
+        <div class="report-header-box">
+          <div class="report-header-box-left">
+            <div class="br-img-box"><img src="{{profilePic}}" alt="" /></div>
+            <div class="br-img-right">
+              <h2>{{stallionName}}</h2>
+              <h6>Service Fee: {{serviceFee}}</h6>
+              <h6>YOB: {{yob}}</h6>
+            </div>
+          </div>
+          <div class="report-header-box-right">
+            <div class="report-header-box-right-button"></div>
+            <div class="report-header-box-right-progress">
+              <div class="progress-bar">
+                <div class="progress-bar-header">
+                  <h6>
+                    Profile Rating: {{#lT profileRating 25}}
+                    <b>Poor</b>
+                    {{else}} {{#lT profileRating 75}}
+                    <b>Intermediate</b>
+                    {{else}}
+                    <b>Good</b>
+                    {{/lT}} {{/lT}}
+                  </h6>
+                  <i class="icon-Info-circle">
+                    <img
+                      src="https://uat-s3-lambda-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/portal/images/info-icon.svg"
+                      alt=""
+                    />
+                  </i>
+                </div>
+                <div class="progress-bar-body">
+                  <span
+                    class="linearprogress-root"
+                    id="linearprogress-root"
+                    role="progressbar"
+                  >
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End header -->
+
+        <!-- Graph Map -->
+        <div class="graph-wrapper">
+          <div class="common-header">
+            <h3>Stud Fee Chart</h3>
+          </div>
+          <div class="graph-body">
+            <div class="graph-box">
+              <!--<img src="https://uat-s3-lambda-bucket.s3.ap-southeast-2.amazonaws.com/report-templates/portal/images/graph.svg" alt="">-->
+              <div class="myChartDiv" style="height: 360px;">
+                <canvas id="myChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Graph Map -->
+
+        <!-- Matched Mares in Stallion Match -->
+        <div class="matched-mare-wrapper">
+          <div class="common-header">
+            <h3>Stud Fee History</h3>
+          </div>
+          <div class="matched-mare-body">
+            <div class="common-datatable stakes-comparison">
+              <div class="datatable">
+                <table>
+                  <thead>
+                    <tr>
+                      <th style="padding-left: 22px;" class="equal-width">Year</th>
+                      <th class="equal-width">Previous Fee</th>
+                      <th class="equal-width">Updated Fee</th>
+                      <th class="equal-width">Updated On</th>
+                      <th class="equal-width">Updated By</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each this.studFeeHistory}}
+                    <tr>
+                      <td>{{this.year}}</td>
+                      <td>
+                        {{this.currencyCode}}{{this.currencySymbol}} {{this.previousFee}}
+                      </td>
+                      <td>
+                        {{this.currencyCode}}{{this.currencySymbol}} {{this.updatedFee}}
+                      </td>
+                      <td>{{this.updatedOn}}</td>
+                      <td>{{this.updatedBy}}</td>
+                    </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Matched Mares in Stallion Match -->
+      </div>
+    </div>
+  </body>
+  <script>
+    var ctx = document.getElementById('myChart');
+    var progressBarEle = document.getElementById('linearprogress-root');
+    var PRICE_DATA, LABLES_OF_LINE_CHART, PROGRESS_BAR;
+    progressBarEle.innerHTML =
+      `<span class="linearprogress-bar"  style="width:` +
+      PROGRESS_BAR +
+      `%;" ></span>`;
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: LABLES_OF_LINE_CHART,
+        datasets: [
+          {
+            label: 'PRICE',
+            data: PRICE_DATA,
+            borderColor: '#1D472E',
+            backgroundColor: '#1D472E',
+            pointHitRadius: 20,
+            pointHoverRadius: 5,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        options: {
+          hover: {
+            mode: 'dataset',
+            intersect: false,
+          },
+        },
+        scales: {
+          x: {
+            grid: {
+              display: false,
+              drawBorder: false,
+            },
+          },
+          y: {
+            grid: {
+              display: true,
+              drawBorder: false,
+            },
+          },
+        },
+        plugins: {
+          legend: {
+            position: 'top',
+            display: false,
+          },
+          title: {
+            display: false,
+          },
+        },
+      },
+    });
+  </script>
+</html>
